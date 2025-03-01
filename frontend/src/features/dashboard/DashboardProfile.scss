@@ -1,0 +1,56 @@
+@import '../../assets/fonts/fonts.scss';
+
+.afisare.profil {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 300px;
+    margin-top: 30px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 20px;
+    justify-content: space-around;
+}
+
+.element-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    >label {
+        font-family: 'Basier Circle Semibold';
+        width: 15%;
+    }
+
+    >span {
+        width: 50%;
+    }
+
+    >button {
+        width: 20%;
+        margin-left: auto;
+        background: none;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+        font-family: 'Basier Circle';
+        cursor: pointer;
+        color: #777;
+
+        &:hover,
+        &.active {
+            color: #02755D;
+            background-color: rgba(234, 237, 240, 0.5);
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.afisare .date {
+    flex: 1;
+}

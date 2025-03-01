@@ -1,0 +1,132 @@
+@import '../../../../assets/fonts/fonts.scss';
+
+.form-creare-cont {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    min-height: 310px;
+    width: inherit;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 215px;
+    gap: 10px;
+    width: 40%;
+}
+
+.form-element {
+    margin-bottom: 15px;
+    height: fit-content;
+    width: 100%;
+
+    input,
+    label {
+        width: 100%;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 14px;
+
+        .label-text {
+            display: flex;
+            width: inherit;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    input{
+        background-color: rgb(223, 227, 231);
+    }
+
+}
+
+.main-section-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+
+    button {
+        //background: none;
+        border-radius: 20px;
+        border: none;
+        color: inherit;
+        font-size: 1.2rem;
+        font-family: 'Basier Circle Semibold';
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(223, 227, 231);
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+        }
+
+        &.deactivated {
+            background-color: #014335;
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+            transform: scale(1.02);
+            pointer-events: none;
+            color: #fff;
+        }
+
+        span {
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+    }
+}
+
+.main-section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 370px;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        background: none;
+        border-radius: 20px;
+        border: none;
+        color: inherit;
+        font-size: 1rem;
+        font-family: 'Basier Circle';
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(223, 227, 231);
+        color: #000;
+        margin-right: 8%;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+
+        &:hover {
+            background-color: #014335;
+            color: #fff;
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.error {
+    font-size: 12px;
+    flex-wrap: wrap;
+    padding-right: 5px;
+    margin: 0;
+}

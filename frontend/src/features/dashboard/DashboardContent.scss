@@ -1,0 +1,38 @@
+@import '../../assets/fonts/fonts.scss';
+
+.butoane{
+    width: 70%;
+    display:flex;
+    justify-content: end;
+
+    >button{
+        background: none;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+        font-family: 'Basier Circle';
+        padding: 10px;
+        cursor: pointer;
+        color: #777;
+
+        &:hover{
+            color: #02755D;
+        }
+
+        &.active{
+            background-color: #fff;
+            border-radius: 10px 10px 0 0;
+            cursor: default;
+            color: #000;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.margine{
+    margin-bottom: 30px;
+}
+
+// .inaltime-max{
+//     max-height: 430px;
+// }

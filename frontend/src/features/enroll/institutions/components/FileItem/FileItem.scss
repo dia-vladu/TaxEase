@@ -1,0 +1,42 @@
+li {
+    list-style: none;
+    background-color: rgb(2, 117, 93, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0.4em 0.5em;
+    min-width: 70%;
+
+    #file-item-icon{
+        pointer-events: none;
+    }
+
+    svg {
+        color: rgb(2, 117, 93);
+
+        &:first-child {
+            font-size: 1.2em;
+            margin-right: 0.8em;
+        }
+    }
+
+    p {
+        flex: 1;
+        font-size: 0.9rem;
+        margin-right: 1.5em;
+    }
+
+    .actions {
+        justify-self: flex-end;
+        
+        .fa-spinner {
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    }
+}

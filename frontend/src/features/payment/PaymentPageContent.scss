@@ -1,0 +1,117 @@
+@import '../../assets/fonts/fonts.scss';
+
+.wrapper-plata {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(223, 227, 231);
+    padding: 25px;
+    font-family: 'Basier Circle Regular';
+    gap: 25px;
+}
+
+.plateste-info {
+    margin-left: 25px;
+
+    h1 {
+        font-family: 'Basier Circle Semibold';
+        margin-top: 0;
+    }
+
+    p {
+        width: 90%;
+    }
+}
+
+.plateste-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 215px;
+    gap: 15px;
+    width: 40%;
+}
+
+.plateste-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+
+    button {
+        background-color: black;
+        color: white;
+        font-family: 'Basier Circle SemiBold';
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all .4s ease;
+
+        &:hover {
+            background-color: #02755D;
+            color: white;
+        }
+    }
+}
+
+.form-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 35px;
+
+    span {
+        width: 35%;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    input {
+        height: 35px;
+        margin-bottom: 20px;
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 2px solid #AAA9A9;
+        box-sizing: border-box;
+        border-radius: 10px;
+        display: inline-block;
+        background-color: #fff;
+
+        &:focus {
+            outline: none;
+            border-color: #02755D;
+            border-width: 3px;
+            background-color: rgb(223, 227, 231);
+        }
+    }
+}
+
+.error {
+    font-size: 12px;
+    flex-wrap: wrap;
+    padding-right: 5px;
+    margin: 0;
+}
+
+.nif-info {
+    text-align: left;
+    width: 90%;
+    
+    p { 
+        color: #777;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,53 @@
+@import '../../assets/fonts/fonts.scss';
+
+.legi-content{
+    width: 100%;
+    background-color: rgb(223, 227, 231);
+    height: auto;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    font-family: 'Basier Circle Regular';
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.part {
+    width: 90%;
+    padding: 30px;
+}
+
+.legi-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lege {
+    background-color: #fff;
+    width: 22%;
+    height: 200px;
+    border-radius: 10px;
+    
+    >p{
+        padding: 10px;
+        margin: 0;
+    }
+}
+
+.gdpr {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5em;
+}
+
+.mesaj-contact{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.mesaj-contact-first{
+    margin: 0;
+}

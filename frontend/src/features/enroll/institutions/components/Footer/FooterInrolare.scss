@@ -1,0 +1,22 @@
+.footerContent {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    background-color: none;
+
+    button {
+        width: 25px;
+        height: 25px;
+        border: none;
+        outline: none;
+        background: none;
+
+        i {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #02755D;
+        }
+    }
+
+}

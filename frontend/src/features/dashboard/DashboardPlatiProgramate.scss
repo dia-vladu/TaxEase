@@ -1,0 +1,102 @@
+@import '../../assets/fonts/fonts.scss';
+
+.sterge {
+    background: none;
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Basier Circle';
+    cursor: pointer;
+    color: #777;
+
+    &:hover,
+    &.active {
+        color: #02755D;
+        background-color: #fff;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.programari {
+    margin-top: 20px;
+}
+
+.visible-form {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(223, 227, 231);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.btn-salveaza {
+    margin-top: 20px;
+    justify-content: flex-end;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Basier Circle';
+
+    &:not(:disabled):hover {
+        background-color: #02755D;
+        color: white;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02);
+    }
+
+    &:disabled {
+        cursor: auto;
+    }
+}
+
+.selects {
+    display: flex;
+    justify-content: space-around;
+
+    >Select {
+        min-width: 60px;
+    }
+}
+
+.btn-adauga {
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(223, 227, 231);
+    color: #000;
+    font-family: 'Basier Circle';
+
+    &:hover {
+        background-color: #02755D;
+        color: white;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02);
+    }
+}
+
+.inchide-btn {
+    cursor: pointer;
+    font-size: 1.5em;
+
+    &:hover {
+        color: #02755D;
+    }
+}
+
+.btn-part {
+    display: flex;
+
+    >i {
+        margin-left: auto;
+    }
+}

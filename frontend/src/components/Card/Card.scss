@@ -1,0 +1,36 @@
+.card-bancar{
+    width: 220px;
+    height: 100px;
+    background-color: rgba(1, 67, 53, 0.7);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: 2px solid #014335;
+    border-radius: 10px;
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-image{
+    // width: 20px;
+    // height: auto;
+
+    >img{
+        width: auto;
+        height: 35px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.card-info{
+    
+    >p{
+        font-size: 12px;
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: 0.7px;
+    }
+}

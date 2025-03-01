@@ -1,0 +1,92 @@
+@import '../../assets/fonts/fonts.scss';
+
+.wrapper {
+    width: 100%;
+    background-color: rgb(223, 227, 231);
+    min-height: calc(100vh - 70px);
+    height: fit-content;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Basier Circle Regular';
+}
+
+.main-section-inregistrare {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 20px;
+    min-height: 400px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    //margin: 30px;
+}
+
+.main-section-inregistrare-content {
+    margin: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: inherit;
+    //flex-grow: 1;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 410px;
+
+    >h2 {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: 0.2px;
+        text-align: center;
+        white-space: pre-wrap;
+        font-family: 'Basier Circle SemiBold';
+    }
+
+    >button {
+        background-color: black;
+        color: white;
+        font-family: 'Basier Circle SemiBold';
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 10px;
+        cursor: pointer;
+        transition: all .4s ease;
+
+
+        &:hover {
+            background-color: #02755D;
+            color: white;
+        }
+    }
+
+    >img {
+        width: 150px;
+        height: 150px;
+    }
+
+    >p {
+        width: 60%;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 18px;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.deschide-cont-section {
+    border-right: 3px dashed lightgray;
+}
+
+.vertical-line {
+    border-left: 1px solid black;
+    height: 90%;
+}

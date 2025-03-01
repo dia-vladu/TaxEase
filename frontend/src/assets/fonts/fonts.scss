@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Basier Circle SemiBold";
+    src: url("https://cdn.revolut.com/media/fonts/BasierCircle-SemiBold.woff2") format("woff2");
+    //font-weight: 600;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "Basier Circle Regular";
+    src: url("https://cdn.revolut.com/media/fonts/BasierCircle-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: fallback;
+}

@@ -1,0 +1,95 @@
+.scrollable-table {
+    overflow-y: auto;
+    max-height: 322px;
+}
+
+.denumire-institutie {
+    font-weight: bold;
+}
+
+.parent-th {
+    background-color: rgba(1, 67, 53, 0.7);
+    color: #fff;
+}
+
+.table-tr {
+    background-color: rgb(223, 227, 231);
+}
+
+.middle {
+    text-align: center;
+}
+
+.margine-stg {
+    padding-left: 5px;
+}
+
+.drop {
+    width: 70px;
+}
+
+.drop-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.descarca {
+    background: none;
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Basier Circle';
+    cursor: pointer;
+    color: #777;
+
+    &:hover,
+    &.active {
+        color: #02755D;
+        background-color: #fff;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.drop-tr {
+    background-color: rgb(223, 227, 231, 0.4);
+
+    >td>table {
+        >thead {
+            >tr {
+                border-bottom: 2px solid #777;
+
+                >th {
+                    text-align: left;
+                }
+            }
+        }
+
+        >tbody>tr {
+            background-color: rgb(223, 227, 231, 0);
+        }
+    }
+}
+
+.suma {
+    width: 58px;
+}
+
+.colspan-2 {
+    width: 30%;
+}
+
+.colspan-3 {
+    width: 70%;
+}
+
+.verde {
+    color: #AFE1AF;
+    //font-size: 0.9rem;
+}
+
+.rosu {
+    color:  #C70039;
+    //font-size: 0.9rem;
+}

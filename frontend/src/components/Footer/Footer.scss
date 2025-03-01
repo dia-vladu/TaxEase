@@ -1,0 +1,80 @@
+@import '../../assets/fonts/fonts.scss';
+
+.footer {
+    height: 100px;
+    position: static;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(25, 28, 31);
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Basier Circle Regular';
+}
+
+.logo-container{
+    margin-top: 10px;
+}
+
+.logo-text {
+    font-family: 'Basier Circle SemiBold';
+    margin-top: 10px;
+    padding-left: 3%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.divider {
+    width: 96%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.flag {
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    margin-right: 30px;
+
+    img {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+    }
+
+    .flag-text {
+        margin-left: 10px;
+    }
+
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3%;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.footer-link {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    padding: 0 10px;
+
+    &:hover{
+        color: #fff;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,44 @@
+.optiuni-afisare {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(234, 237, 240);
+    border-radius: 15px;
+    border: 2px solid #014335;
+    overflow: hidden;
+
+    >button {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        font-family: 'Basier Circle';
+        padding: 7px;
+        cursor: pointer;
+    }
+
+    #line-chart{
+        border-right: 2px solid #014335;
+        border-left: 2px solid #014335;
+    }
+
+    .active{
+        background-color: rgba(1, 67, 53, 0.6);
+        color: #fff;
+    }
+}
+
+.afisare {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.istoric-content{
+    margin: 10px;
+    height: 100%;
+    width: 95%;
+}

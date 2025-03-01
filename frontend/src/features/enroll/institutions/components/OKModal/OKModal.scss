@@ -1,0 +1,22 @@
+.OK-top-part {
+    display: flex;
+    word-wrap: normal;
+    flex-direction: row;
+    align-content: baseline;
+    justify-content: space-between;
+    flex: 1;
+
+    button {
+        width: 25px;
+        height: 25px;
+        border: none;
+        outline: none;
+        background: none;
+
+        i {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #02755D;
+        }
+    }
+}

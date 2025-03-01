@@ -1,0 +1,105 @@
+table {
+    width: 100%;
+
+    tbody {
+        .parent-tr {
+            background-color: rgba(1, 67, 53, 0.7);
+            color: #fff;
+
+            >.institutie {
+                padding-left: 10px;
+                font-weight: bold;
+            }
+        }
+
+        >tr {
+            height: 40px;
+            margin-bottom: 10px;
+
+            .drop-button {
+                text-align: center;
+
+                >button {
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+
+            background-color: rgba(1, 67, 53, 0.6);
+        }
+
+        .dropped-tr {
+            background-color: rgb(223, 227, 231);
+
+            >td>table {
+                >thead {
+                    >tr {
+                        border-bottom: 2px solid #777;
+
+                        >th {
+                            text-align: left;
+                        }
+                    }
+                }
+
+                >tbody>tr {
+                    background-color: rgb(223, 227, 231);
+                   
+                    .first-td {
+                        width: 533px;
+                    }
+
+                    .total {
+                        font-weight: bold;
+                    }
+
+                    .second-td {
+                        width: 53px;
+                    }
+
+                    .third-td {
+                        width: 119px;
+                    }
+
+                    .plateste {
+
+                        >button {
+                            background: none;
+                            padding: 7px;
+                            border-radius: 10px;
+                            border: none;
+                            font-size: 1rem;
+                            font-family: 'Basier Circle';
+                            cursor: pointer;
+                            color: #777;
+
+                            &:hover,
+                            &.active {
+                                color: #02755D;
+                                background-color: #fff;
+                                box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.scrollable{
+    overflow-y: auto;
+}
+
+.empty-message {
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 95%;
+    padding: 10px;
+    border: 2px solid rgba(1, 67, 53, 0.6);
+    border-radius: 10px;
+    background-color: rgba(1, 67, 53, 0.3);
+    font-weight: 600;
+}
