@@ -1,0 +1,40 @@
+const express = require("express");
+const router = express.Router();
+
+const accounts = require("./users/accounts");
+const auth = require("./auth");
+const cards = require("./payments/cards");
+const counties = require("./locations/counties");
+const emails = require("./email/email");
+const enrolledInstitutions = require("./institutions/enrolledInstitutions");
+const fees = require("./taxes/fees");
+const files = require("./files");
+const institutions = require("./institutions/institutions");
+const knownTaxes = require("./taxes/knownTaxes");
+const payments = require("./payments/payments");
+const paymentElements = require("./payments/elements");
+const requests = require("./institutions/requests");
+const stripePayments = require("./stripe/stripePayment");
+const stripeSessions = require("./stripe/stripeSession");
+const taxes = require("./taxes/taxes");
+const users = require("./users/users");
+
+router.use("/accounts", accounts);
+router.use("/auth", auth);
+router.use("/cards", cards);
+router.use("/counties", counties);
+router.use("/emails", emails);
+router.use("/enrolledInstitutions", enrolledInstitutions);
+router.use("/fees", fees);
+router.use("/files", files);
+router.use("/institutions", institutions);
+router.use("/knownTaxes", knownTaxes);
+router.use("/payments", payments);
+router.use("/paymentElements", paymentElements);
+router.use("/requests", requests);
+router.use("/stripePayments", stripePayments);
+router.use("/stripeSessions", stripeSessions);
+router.use("/taxes", taxes);
+router.use("/users", users);
+
+module.exports = router;
