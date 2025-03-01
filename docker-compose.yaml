@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+# Oracle Database service
+  db:
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    container_name: oracle-db # rn it's taxEaseDB
+    environment:
+      - ORACLE_PASSWORD=your-db-password  # Password for the Oracle DB
+      - ORACLE_PDB=your-pdb-name  # Oracle PDB name (usually XE for Express Edition)
+    ports:
+      - "1522:1521"  # Expose the Oracle DB port
+      - "5501:5500"  # Optional: For Oracle SQL Developer/Enterprise Manager (web access)
+    networks:
+      - mynetwork
+    volumes:
+      - oracle-data:/opt/oracle/oradata  # Persist data
+
+  app:
+    build:
+      context: .  # The directory where the Dockerfile is located
+      dockerfile: Dockerfile  # Specify the Dockerfile to use
+    container_name: full-stack-app
+    ports:
+      - "3000:3000"  # Expose frontend port (if necessary)
+      - "5000:5000"  # Expose backend port (if necessary)
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=db  # Set the DB host as the name of the DB container (db)
+      - DB_PORT=1522  # Default Oracle DB port
+      - DB_USER=pdb_admin  # Your DB username
+      - DB_PASSWORD=admin  # Your DB password
+      - DB_SERVICE=XE  # The Oracle database service name (default: XE)
+    depends_on:
+      - db  # Ensure DB container starts first
+    networks:
+      - mynetwork
+
+# Define the custom network
+networks:
+  mynetwork:
+    driver: bridge
+
+# Volumes to persist Oracle database data
+volumes:
+  oracle-data:
+    driver: local
