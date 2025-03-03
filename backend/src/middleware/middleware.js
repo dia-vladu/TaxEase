@@ -24,8 +24,7 @@ module.exports = (app) => {
       resave: false,
       saveUninitialized: false,
       cookie: {
-        //maxAge: 60 * 60 * 1000, //1 hour
-        maxAge: 5 * 60 * 1000, //1 hour
+        maxAge: 60 * 60 * 1000, //1 hour
         httpOnly: true
       }
     })
