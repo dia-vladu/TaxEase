@@ -21,7 +21,10 @@ router.post("/payment-success", async (req, res) => {
             return res.status(400).json({ error: "Missing metadata from Stripe session." });
         }
 
+        metadata.amount = session.amount_total / 100;
+        
         const bodyPlata = helper.buildBodyPlata(metadata, userId);
+        console.log("bodyPlata:", bodyPlata);
         const paymentResponse = await helper.sendPostRequest(helper.API_URLS.ADD_PLATA, bodyPlata);
         const payment = paymentResponse.payment;
         console.log("Payment Response:", paymentResponse);

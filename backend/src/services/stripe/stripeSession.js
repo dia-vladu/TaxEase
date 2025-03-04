@@ -28,19 +28,19 @@ const prepareLineItems = async (taxesData, bonificationRate, penaltyRate) => {
     let finalAmount = unitAmountInBani;
 
     if (bonification) {
-      finalAmount -= bonification.amount * 100; // Subtract bonification
+      finalAmount = finalAmount - bonification.amount * 100; // Subtract bonification
     }
-    if (penalties) {
-      finalAmount += penalties.amount * 100; // Add penalty
-    }
+    // if (penalties) {
+    //   finalAmount = finalAmount + penalties.amount * 100; // Add penalty
+    // }
 
     // Base tax line item
     const lineItems = [
       {
         price_data: {
           currency: "ron",
-          product_data: { name: tax.taxName },
-          unit_amount: unitAmountInBani,
+          product_data: { name: unitAmountInBani === finalAmount ? tax.taxName : `${tax.taxName} * Bonification applied` },
+          unit_amount: finalAmount,
         },
         quantity: 1,
       },
@@ -64,7 +64,7 @@ const prepareLineItems = async (taxesData, bonificationRate, penaltyRate) => {
         price_data: {
           currency: "ron",
           product_data: {
-            name: `Bonification for ${tax.taxName} (${bonificationRate}% discount) - Discount Applied`,
+            name: `Bonification for ${tax.taxName} (${bonificationRate}% discount)`,
           },
           unit_amount: 0,
         },

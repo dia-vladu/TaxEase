@@ -71,7 +71,7 @@ function buildBodyPlata(metadata, userId) {
     return {
         paymentDate: new Date(),
         amount: metadata.amount,
-        benefitedPersonId: metadata.payeeCode,
+        benefitedPersonId: metadata.identificationCode || metadata.payeeCode,
         institutionCUI: metadata.institutionCui,
         cardId: null,
         userId: userId,
