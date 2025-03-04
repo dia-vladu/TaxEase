@@ -16,7 +16,7 @@ export default function DashboardIstoric() {
     const buttonConfig = [
         { path: '/dashboard/istoric', label: 'Table', id: 'tabel', component: <IstoricTable /> },
         { path: '/dashboard/istoric/line', label: 'Line Chart', id: 'line-chart', component: <IstoricLine /> },
-        { path: '/dashboard/istoric/pie', label: 'Pie Chart', id: 'pie-chart', component: <IstoricPie /> },
+        { path: '/dashboard/istoric/pie', label: 'Doughnut Chart', id: 'pie-chart', component: <IstoricPie /> },
     ];
 
     return (
