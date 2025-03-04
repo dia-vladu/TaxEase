@@ -100,11 +100,11 @@ To create an account, users must navigate to the account registration page, wher
 
 Since the sections are completed sequentially, users must fill in all required fields before proceeding to the next step. If any field is left empty or invalid, warning messages will be displayed below.
 
-![Enrollment Page](./documentation%20photos/enrollmentPage.png)
+![SignIn Page - Personal Info](./documentation%20photos/signInPagePersonalInfo.png)
 
 At the end of the registration process, if all fields are correctly filled, the system generates a random verification code, which is sent to the user’s email for validation. A modal window will appear, prompting the user to enter the verification code. If the entered code matches the generated one, the user is successfully added to the database.
 
-![Enrollment Page](./documentation%20photos/enrollmentPage.png)
+![Confirmation Code Modal](./documentation%20photos/confirmationCodeModal.png)
 
 ### 2. Secure Login and Authentication
 
@@ -123,7 +123,7 @@ Once logged in, the user is redirected to their personal dashboard, where they c
 - The tax obligations owed to the institutions they are registered under
 - Detailed information about each tax, including the total amount due
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Dashboard Payment Duties Page](./documentation%20photos/dashboardPaymentDutiesPage.png)
 
 *Making a Payment*
 
@@ -132,18 +132,24 @@ If the user wants to pay their taxes for a specific institution, they can click 
 - The payment portal is implemented using Stripe
 - Late payment penalties and early payment discounts are automatically applied where applicable
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Stripe Payment Portal](./documentation%20photos/stripePaymentPortal.png)
 
 ### 4. Payment History & Visualization
 
 Users with an account can track their payment history through visual representations:
 
-- Line chart for an overview of payments over time
-- Doughnut chart for a breakdown of payment categories
+- **Table chart** with the possibility of seing details about the payments and also a Download button, which will download to the user's computer the payment receipt.
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Dashboard History Page - Table](./documentation%20photos/dashboardHistoryPageTable.png)
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Payment Receipt](./documentation%20photos/paymentReceipt.png)
+
+- **Line chart** for an overview of payments over time
+- **Doughnut chart** for a breakdown of payment categories
+
+![Dashboard History Page - Line Chart](./documentation%20photos/dashboardHistoryPageLine.png)
+
+![Dashboard History Page - Doughnut Chart](./documentation%20photos/dashboardHistoryPageDoughnut.png)
 
 ### 5. Profile Customization
 
@@ -152,7 +158,7 @@ Registered users can personalize their profile by:
 - Uploading a profile picture
 - Updating personal data
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Dashboard Profile Page](./documentation%20photos/dashboardProfilePage.png)
 
 ## Unregistered Users
 
@@ -164,4 +170,4 @@ Unregistered users can pay their tax obligations, provided they already know the
 
 To complete a payment, users must fill out a payment form.
 
-![LogIn Page](./documentation%20photos/logInPage.png)
+![Payment Form Page](./documentation%20photos/paymentFormPage.png)
