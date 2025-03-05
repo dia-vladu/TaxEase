@@ -2,6 +2,10 @@ function validateTIN(tin) {
     if (!tin || typeof tin !== "string" || tin.length === 0) {
         throw new Error("Invalid TIN: must be a non-empty string");
     }
+
+    if (!/^\d+$/.test(tin)) {
+        throw new Error("Invalid TIN: must contain only digits");
+    }
 }
 
 function extractBirthDate(tin) {
@@ -30,10 +34,6 @@ function extractBirthDate(tin) {
     const month = parseInt(tin.substr(3, 2), 10);
     const day = parseInt(tin.substr(5, 2), 10);
 
-    if (isNaN(year) || isNaN(month) || isNaN(day)) {
-        throw new Error("Invalid TIN: contains non-numeric parts");
-    }
-
     const birthDate = new Date(year, month - 1, day);
     if (
         birthDate.getFullYear() !== year ||
@@ -52,7 +52,7 @@ function extractGender(tin) {
 
     const firstDigit = parseInt(tin.charAt(0), 10);
 
-    if (isNaN(firstDigit) || firstDigit < 1 || firstDigit > 8) {
+    if (firstDigit < 1 || firstDigit > 8) {
         return null;
     }
 
