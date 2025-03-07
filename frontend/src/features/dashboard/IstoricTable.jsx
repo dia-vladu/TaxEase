@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import './IstoricTable.scss';
 import UserContext from '../../context/UserContext';
 import apiDashboard from '../../services/api/apiDashboard';
@@ -13,13 +13,7 @@ export default function IstoricTable() {
         paidItems: {} // keyed by paymentId
     });
 
-    useEffect(() => {
-        if (userData.identificationCode) {
-            loadDashboardData();
-        }
-    }, [userData]);
-
-    const loadDashboardData = async () => {
+    const loadDashboardData = useCallback(async () => {
         try {
             const payments = await apiDashboard.getPayments(userData.identificationCode);
             const uniqueCuis = [...new Set(payments.data.data.map((p) => p.institutionCUI))];
@@ -29,7 +23,13 @@ export default function IstoricTable() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }, [userData.identificationCode]);
+
+    useEffect(() => {
+        if (userData.identificationCode) {
+            loadDashboardData();
+        }
+    }, [userData, loadDashboardData]);
 
     // Helper to fetch payment details without UI side effects
     const loadPaymentDetails = async (paymentId) => {

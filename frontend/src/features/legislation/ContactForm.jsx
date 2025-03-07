@@ -54,7 +54,7 @@ function ContactForm() {
               prenume: utilizator.data.prenume,
               email: utilizator.data.email,
             }));
-            console.log('UserData:', userData, 'utilizator:', utilizator.data);
+            //console.log('UserData:', userData, 'utilizator:', utilizator.data);
           }
         }
       } catch (error) {
@@ -63,7 +63,7 @@ function ContactForm() {
     };
 
     checkLoginStatus();
-    console.log('UserData2:', userData)
+    // eslint-disable-next-line
   }, [isSubmitted]);
 
   useEffect(() => {

@@ -54,7 +54,7 @@ const useCheckPaymentSession = (sessionType = "default") => {
         handlePaymentSuccess();
 
         return () => controller.abort(); // Cleanup function to cancel request
-    }, []);
+    }, [sessionType]);
 };
 
 export default useCheckPaymentSession;

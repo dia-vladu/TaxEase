@@ -10,7 +10,7 @@ const useEnhancedTaxes = (taxesToBePaid, taxesData, getImpozitName) => {
             ...tax,
             taxName: getImpozitName(tax.taxId),
         }));
-    }, [taxesToBePaid, taxesData, getImpozitName]);  // Runs ONLY when taxesToBePaid changes
+    }, [taxesToBePaid, getImpozitName]);  // Runs ONLY when taxesToBePaid changes
 };
 
 export default useEnhancedTaxes;
