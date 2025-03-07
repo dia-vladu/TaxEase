@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './Card.scss'
 import visaImg from '../../assets/images/visa.png';
-import mastercardImg from '../../assets/images/mastercard1.png';
 import UserContext from '../../context/UserContext';
 
 export default function Card() {
-    const { userAccount, setUserAccount } = useContext(UserContext);
+    const { userAccount } = useContext(UserContext);
     const [cardData, setCardData] = useState(null);
 
     useEffect(() => {

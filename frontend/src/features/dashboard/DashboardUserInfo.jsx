@@ -6,8 +6,8 @@ import PozaProfilContext from '../../context/ProfilePictureContext';
 import UserContext from '../../context/UserContext';
 
 export default function DashboardUserInfo() {
-    const { userData, setUserData } = useContext(UserContext);
-    const { userAccount, setUserAccount } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
+    const { userAccount } = useContext(UserContext);
     const [defaultImage, setDefaultImage] = useState('');
     const { pozaProfil } = useContext(PozaProfilContext);
 

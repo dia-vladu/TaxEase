@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import Select from 'react-select';
+// eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto'
 import { Doughnut } from 'react-chartjs-2';
 import UserContext from '../../context/UserContext';
 import apiDashboard from '../../services/api/apiDashboard';
 
 export default function IstoricPie() {
-    const { userAccount, userData } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
     const [dropdownOptionsYear, setDropdownOptionsYear] = useState([]);
     const [dropdownOptionsInstitution, setDropdownOptionsInstitution] = useState([]);
     const [chartData, setChartData] = useState(null);
@@ -23,13 +23,7 @@ export default function IstoricPie() {
         year: null
     });
 
-    useEffect(() => {
-        if (userData.identificationCode) {
-            loadDashboardData();
-        }
-    }, [userData]);
-
-    const loadDashboardData = async () => {
+    const loadDashboardData = useCallback(async () => {
         try {
             const payments = await apiDashboard.getPayments(userData.identificationCode);
             const uniqueCuis = [...new Set(payments.data.data.map((p) => p.institutionCUI))];
@@ -46,7 +40,13 @@ export default function IstoricPie() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }, [userData.identificationCode]);
+
+    useEffect(() => {
+        if (userData.identificationCode) {
+            loadDashboardData();
+        }
+    }, [userData, loadDashboardData]);
 
     const loadPaymentDetails = async (paymentId) => {
         try {
@@ -83,13 +83,7 @@ export default function IstoricPie() {
         }
     };
 
-    useEffect(() => {
-        if (formValues.institution && formValues.year && data.knownTaxes.length > 0) {
-            generateChartData();
-        }
-    }, [formValues, data.knownTaxes]);
-
-    const generateChartData = async () => {
+    const generateChartData = useCallback(async () => {
 
         console.log("formValues:", formValues);
         console.log("data.knownTaxes:", data.knownTaxes);
@@ -145,7 +139,13 @@ export default function IstoricPie() {
         console.log("chartData:", chartData);
 
         setChartData(chartData);
-    };
+    }, [formValues, data]);
+
+    useEffect(() => {
+        if (formValues.institution && formValues.year && data.knownTaxes.length > 0) {
+            generateChartData();
+        }
+    }, [formValues, data.knownTaxes, generateChartData]);
 
     const handleSelectChange = async (selectedOption, fieldId) => {
         const value = selectedOption ? selectedOption.value : null;

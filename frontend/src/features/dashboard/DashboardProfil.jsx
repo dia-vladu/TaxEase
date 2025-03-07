@@ -6,8 +6,8 @@ import UserContext from '../../context/UserContext';
 import useUserDataUpdate from "../../hooks/useUserDataUpdate";
 
 export default function DashboardProfil() {
-    const { pozaProfil, setPozaProfil } = useContext(ProfilePictureContext);
-    const { userData, setUserData } = useContext(UserContext);
+    const { setPozaProfil } = useContext(ProfilePictureContext);
+    const { userData } = useContext(UserContext);
     const [editingField, setEditingField] = useState(null); // State to track the field being edited
     const [editedUserData, setEditedUserData] = useState(userData); // State to store edited user data
     const [selectedImage, setSelectedImage] = useState(null);
@@ -16,7 +16,7 @@ export default function DashboardProfil() {
 
     useEffect(() => {
         setEditedUserData(userData);
-        console.log(editedUserData);
+        //console.log(editedUserData);
     }, [userData]);
 
     const handleEditClick = (fieldName) => setEditingField(fieldName);
@@ -88,7 +88,7 @@ export default function DashboardProfil() {
                 (
                     <>
                         {/* any image format is allowed (PNG, JPG, GIF, SVG, WebP, etc.) */}
-                        <input type="file" accept="image/*" onChange={handleImageChange}/>
+                        <input type="file" accept="image/*" onChange={handleImageChange} />
                         <button className="active" onClick={handleSubmit}>Save</button>
                     </>
                 )

@@ -5,7 +5,7 @@ import useUserData from './useUserData';
 const useUserDataUpdate = (userId) => {
     const [triggerRefetch, setTriggerRefetch] = useState(false);
     const { userAccount, error: userAccountError } = useUserAccount();
-    const { userData, setUserData, error: userDataError } = useUserData(userAccount, triggerRefetch);
+    const { setUserData, error: userDataError } = useUserData(userAccount, triggerRefetch);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 

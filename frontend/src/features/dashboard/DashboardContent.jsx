@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useLocation } from 'react-router-dom';
 import DashboardImpozite from './DashboardImpozite';
 import DashboardUserInfo from './DashboardUserInfo';
 import './DashboardContent.scss';
 import DashboardIstoric from './DashboardIstoric';
 import DashboardProfil from './DashboardProfil';
-import DashboardPlatiProgramate from './DashboardPlatiProgramate';
 import { useNavigate } from 'react-router-dom';
 import { ProfilePictureProvider } from '../../context/ProfilePictureContext';
 //import useUserData from './useUserData';

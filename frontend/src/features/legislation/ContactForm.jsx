@@ -34,7 +34,7 @@ function ContactForm() {
     }, 4000);
   };
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [setLoggedIn] = useState(false);
 
   useEffect(() => {
     const checkLoginStatus = async () => {

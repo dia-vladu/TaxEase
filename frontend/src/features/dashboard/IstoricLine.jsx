@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import './IstoricTable.scss';
 import Select from 'react-select';
 import { Line } from 'react-chartjs-2';
+// eslint-disable-next-line
 import { Chart as ChartJS } from 'chart.js/auto';
 import UserContext from '../../context/UserContext';
 import apiDashboard from '../../services/api/apiDashboard';
 
 export default function IstoricLine() {
-    const { userAccount, userData } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
     const [dropdownOptionsTax, setDropdownOptionsTax] = useState([]);
     const [dropdownOptionsInstitution, setDropdownOptionsInstitution] = useState([]);
     const [chartData, setChartData] = useState(null);
@@ -23,13 +24,7 @@ export default function IstoricLine() {
         tax: null
     });
 
-    useEffect(() => {
-        if (userData.identificationCode) {
-            loadDashboardData();
-        }
-    }, [userData]);
-
-    const loadDashboardData = async () => {
+    const loadDashboardData = useCallback(async () => {
         try {
             const payments = await apiDashboard.getPayments(userData.identificationCode);
             const uniqueCuis = [...new Set(payments.data.data.map((p) => p.institutionCUI))];
@@ -46,7 +41,13 @@ export default function IstoricLine() {
         } catch (error) {
             console.error(error);
         }
-    };
+    }, [userData.identificationCode]);
+
+    useEffect(() => {
+        if (userData.identificationCode) {
+            loadDashboardData();
+        }
+    }, [userData, loadDashboardData]);
 
     const loadPaymentDetails = async (paymentId) => {
         try {
@@ -80,13 +81,7 @@ export default function IstoricLine() {
         }
     };
 
-    useEffect(() => {
-        if (formValues.institution && formValues.tax && data.knownTaxes.length > 0) {
-            generateChartData();
-        }
-    }, [formValues, data.knownTaxes]);
-
-    const generateChartData = async () => {
+    const generateChartData = useCallback(async () => {
 
         console.log("formValues:", formValues);
         console.log("data.knownTaxes:", data.knownTaxes);
@@ -123,7 +118,13 @@ export default function IstoricLine() {
         console.log("chartData:", chartData);
 
         setChartData(chartData);
-    };
+    }, [formValues, data]);
+
+    useEffect(() => {
+        if (formValues.institution && formValues.tax && data.knownTaxes.length > 0) {
+            generateChartData();
+        }
+    }, [formValues, data.knownTaxes, generateChartData]);
 
     const handleSelectChange = async (selectedOption, fieldId) => {
         const value = selectedOption ? selectedOption.value : null;

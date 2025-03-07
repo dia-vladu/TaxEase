@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-regular-svg-icons';
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import './OKModal/OKModal.scss';
 import './InrolareModal.scss';
-import MailContext from '../../../../context/MailContext';
 
 const InrolareModal = ({ toggleModal, setUpdatedMail }) => {
 

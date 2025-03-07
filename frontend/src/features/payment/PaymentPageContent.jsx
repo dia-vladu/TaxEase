@@ -80,7 +80,7 @@ export default function PlataPageContent() {
                             email,
                             payerCode: identificationCode,
                         }));
-                        console.log('UserData:', userData, 'utilizator:', userResponse.data);
+                        //console.log('UserData:', userData, 'utilizator:', userResponse.data);
                     }
                 }
             } catch (error) {
@@ -89,7 +89,7 @@ export default function PlataPageContent() {
         };
 
         checkLoginStatus();
-        console.log('UserData2:', userData)
+        //console.log('UserData2:', userData)
     }, [isCleared]);
 
     useEffect(() => {

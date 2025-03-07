@@ -124,12 +124,12 @@ export default function LoginContent() {
                                         {isPasswordVisible ? <FaEyeSlash /> : <FaEye />}
                                     </button>
                                 </label>
-                                <a href="#"
-                                    className={`link forgot ${isForgotPasswordHovered ? 'hovered' : ''
-                                        }`}
+                                <a href="login"
+                                    className={`link forgot ${isForgotPasswordHovered ? 'hovered' : ''}`}
                                     onMouseEnter={() => handleHover(setIsForgotPasswordHovered)(true)}
                                     onMouseLeave={() => handleHover(setIsForgotPasswordHovered)(false)}
-                                    onClick={toggleModal}>
+                                    onClick={toggleModal}
+                                >
                                     <span>Forgot my password</span>
                                     {isForgotPasswordHovered && <FaArrowRight />}
                                 </a>
@@ -138,7 +138,8 @@ export default function LoginContent() {
                                     className={`link ${isCreateAccountHovered ? 'hovered' : ''
                                         }`}
                                     onMouseEnter={() => handleHover(setIsCreateAccountHovered)(true)}
-                                    onMouseLeave={() => handleHover(setIsCreateAccountHovered)(false)}>
+                                    onMouseLeave={() => handleHover(setIsCreateAccountHovered)(false)}
+                                >
                                     <span>Create Account</span>
                                     {isCreateAccountHovered && <FaArrowRight />}
                                 </a>

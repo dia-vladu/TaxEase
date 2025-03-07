@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import './DashboardImpozite.scss';
 import UserContext from '../../context/UserContext';
@@ -13,8 +13,8 @@ import useCheckOutPaymentSession from "../../hooks/useCheckOutPaymentSession";
 axios.defaults.withCredentials = true;
 
 export default function DashboardImpozite() {
-    const { userAccount, setUserAccount } = useContext(UserContext);
-    const { userData, setUserData } = useContext(UserContext);
+    const { userAccount } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
     const identificationCode = userData?.identificationCode;
     const { cardId } = useFetchCardData(userAccount);
 
