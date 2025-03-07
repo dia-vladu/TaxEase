@@ -6,7 +6,7 @@
         "start:backend": "npm run start --prefix backend",
         "ci:frontend": "npm ci --prefix frontend",
         "ci:backend": "npm ci --prefix backend",
-        "test:backend": "npm test --prefix backend --passWithNoTests",
-        "test:frontend": "npm test --prefix frontend --passWithNoTests"
+        "test:backend": "npm test --prefix backend -- --passWithNoTests",
+        "test:frontend": "npm test --prefix frontend -- --passWithNoTests"
     }
 }
