@@ -1,15 +1,15 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const router = express.Router();
+import { Router } from 'express';
+import { readdirSync, statSync } from 'fs';
+import { join } from 'path';
+const router = Router();
 
 // Dynamically & recursively load all route files in the current directory
 const loadRoutes = (dir, baseRoute = '') => {
-    fs.readdirSync(dir).forEach((file) => {
-        const fullPath = path.join(dir, file);
-        const routePath = path.join(baseRoute, file.replace('.js', '')).replace(/\\/g, '/');
+    readdirSync(dir).forEach((file) => {
+        const fullPath = join(dir, file);
+        const routePath = join(baseRoute, file.replace('.js', '')).replace(/\\/g, '/');
 
-        if (fs.statSync(fullPath).isDirectory()) {
+        if (statSync(fullPath).isDirectory()) {
             loadRoutes(fullPath, routePath);
         } else if (file !== 'index.js' && file.endsWith('.js')) {
             try {
@@ -24,4 +24,4 @@ const loadRoutes = (dir, baseRoute = '') => {
 
 loadRoutes(__dirname);
 //console.log(router);
-module.exports = router;
+export default router;

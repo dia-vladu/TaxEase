@@ -1,10 +1,10 @@
-const CryptoJS = require("crypto-js");
+import { lib } from "crypto-js";
 
 function ensureSecretKey() {
   let secretKeyString = process.env.SECRET_KEY;
   
   if (!secretKeyString) {
-    const secretKey = CryptoJS.lib.WordArray.random(16);
+    const secretKey = lib.WordArray.random(16);
     secretKeyString = secretKey.toString();
     process.env.SECRET_KEY = secretKeyString;
     console.log("New secret key generated");
@@ -13,4 +13,4 @@ function ensureSecretKey() {
   return secretKeyString;
 }
 
-module.exports = ensureSecretKey;
+export default ensureSecretKey;

@@ -1,4 +1,4 @@
-const { extractBirthDate, extractGender } = require("../userUtils");
+import { extractBirthDate, extractGender } from "../userUtils.js";
 
 describe("extractBirthDate", () => {
     test("Should correctly extract birth date", () => {

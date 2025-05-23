@@ -12,4 +12,4 @@ function getMonthDifference(startDate, endDate) {
   return monthDifference;
 }
 
-module.exports = { getMonthDifference };
+export { getMonthDifference };

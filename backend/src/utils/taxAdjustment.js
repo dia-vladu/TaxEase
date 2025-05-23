@@ -1,4 +1,4 @@
-const { getMonthDifference } = require("./dateUtils.js");
+import { getMonthDifference } from "./dateUtils.js";
 
 const calculateTaxAdjustments = (knownTax, paymentDate, bonificationRate, penaltyRate, name) => {
     const issuanceDate = new Date(knownTax.issuanceDate);
@@ -43,4 +43,4 @@ const calculateTaxAdjustments = (knownTax, paymentDate, bonificationRate, penalt
     return { bonification, penalties };
 };
 
-module.exports = { calculateTaxAdjustments };
+export default { calculateTaxAdjustments };

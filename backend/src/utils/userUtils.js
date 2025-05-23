@@ -60,4 +60,4 @@ function extractGender(tin) {
     return gender;
 }
 
-module.exports = { extractBirthDate, extractGender };
+export { extractBirthDate, extractGender };
