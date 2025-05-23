@@ -1,6 +1,7 @@
-const nodemailer = require("nodemailer");
-const Mailgen = require("mailgen");
-require("dotenv").config();
+import { createTransport } from "nodemailer";
+import Mailgen from "mailgen";
+import dotenv from "dotenv";
+dotenv.config();
 
 const { EMAIL, PASSWORD } = process.env;
 
@@ -14,7 +15,7 @@ const sendEmail = async ( userEmail, subject, responseBody ) => {
     },
   };
 
-  const transporter = nodemailer.createTransport(config);
+  const transporter = createTransport(config);
 
   // Initialize Mailgen with basic product info
   const MailGenerator = new Mailgen({
@@ -47,6 +48,4 @@ const sendEmail = async ( userEmail, subject, responseBody ) => {
   }
 };
 
-module.exports = {
-  sendEmail
-};
+export default { sendEmail };

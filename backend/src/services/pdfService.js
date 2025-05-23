@@ -1,13 +1,13 @@
-const axios = require("axios");
-const { jsPDF } = require('jspdf');
-const autoTable = require('jspdf-autotable');
+import { get, post } from "axios";
+import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 const API_URLS = {
     GET_UTILIZATOR: "http://localhost:8080/api/users/code",
 };
 
 async function generatePDf(metadata) {
-    const userData = await axios.get(`${API_URLS.GET_UTILIZATOR}/${metadata.identificationCode}`);
+    const userData = await get(`${API_URLS.GET_UTILIZATOR}/${metadata.identificationCode}`);
     const doc = new jsPDF();
 
     doc.setFontSize(18);
@@ -45,9 +45,9 @@ async function generatePDf(metadata) {
     let total = 0;
 
     const elementePlatiteTableDataPromises = metadata.items.map(async (elementPlatit) => {
-        const response_nume = await axios.get(`http://localhost:8080/api/taxes/${elementPlatit.id}`)
+        const response_nume = await get(`http://localhost:8080/api/taxes/${elementPlatit.id}`)
         const impozitName = response_nume.data.nume;
-        const reponse_suma = await axios.get(`http://localhost:8080/api/knownTaxes/${elementPlatit.id}`)
+        const reponse_suma = await get(`http://localhost:8080/api/knownTaxes/${elementPlatit.id}`)
         const impozitSuma = reponse_suma.data.suma;
         total += impozitSuma;
         return [impozitName, impozitSuma, total];
@@ -77,7 +77,7 @@ async function generatePDf(metadata) {
 }
 
 async function sendPDFToUser(email, pdfData) {
-    await axios.post('/paymentProof', {
+    await post('/paymentProof', {
         userEmail: email, 
         generatedPdf: pdfData,
     });

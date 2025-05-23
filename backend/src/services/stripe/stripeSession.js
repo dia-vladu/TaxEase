@@ -1,14 +1,15 @@
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
-const axios = require("axios");
-const { calculateTaxAdjustments } = require("../../utils/taxAdjustment.js");
+import Stripe from 'stripe';
+const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
+import { get } from "axios";
+import { calculateTaxAdjustments } from "../../utils/taxAdjustment.js";
 
 const fetchUserData = async (userId) => {
-  const userResponse = await axios.get(`http://localhost:8080/api/users/${userId}`);
+  const userResponse = await get(`http://localhost:8080/api/users/${userId}`);
   return userResponse.data;
 };
 
 const fetchInstitutionData = async (cui) => {
-  const institutionResponse = await axios.get(`http://localhost:8080/api/enrolledInstitutions/cui/${cui}`);
+  const institutionResponse = await get(`http://localhost:8080/api/enrolledInstitutions/cui/${cui}`);
   return institutionResponse.data;
 };
 
@@ -76,4 +77,4 @@ const prepareLineItems = async (taxesData, bonificationRate, penaltyRate) => {
   });
 };
 
-module.exports = { fetchUserData, fetchInstitutionData, prepareLineItems }
+export default { fetchUserData, fetchInstitutionData, prepareLineItems }

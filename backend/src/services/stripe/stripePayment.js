@@ -1,5 +1,5 @@
-const axios = require("axios");
-const { extractBirthDate, extractGender } = require("../../utils/userUtils");
+import { post, put } from "axios";
+import { extractBirthDate, extractGender } from "../../utils/userUtils";
 
 const API_URLS = {
     ADD_PLATA: "http://localhost:8080/api/payments/add",
@@ -25,7 +25,7 @@ async function getStripeSession(stripe, session_id) {
 
 async function sendPostRequest(url, body) {
     try {
-        const response = await axios.post(url, body);
+        const response = await post(url, body);
         return response.data;
     } catch (error) {
         throw new Error(`POST request to ${url} failed: ${error.message}`);
@@ -34,7 +34,7 @@ async function sendPostRequest(url, body) {
 
 async function updateImpozit(id) {
     try {
-        await axios.put(`${API_URLS.UPDATE_IMPOZIT}/${id}`);
+        await put(`${API_URLS.UPDATE_IMPOZIT}/${id}`);
     } catch (error) {
         throw new Error(`Failed to update impozit with ID ${id}: ${error.message}`);
     }
@@ -87,7 +87,7 @@ function buildBodyElem(paymentId, metadata) {
     };
 }
 
-module.exports = {
+export default {
     getStripeSession, sendPostRequest, updateImpozit, processPaymentItems, API_URLS,
     buildBodyUtilizator, buildBodyPlata, buildBodyElem
 };
